@@ -5,6 +5,7 @@ const bodyParser = require('body-parser');
 const http = require('http').Server(app);
 
 
+
 app.set('views', __dirname + '/views/');
 app.use(express.static(__dirname + '/public/'));
 app.use(express.static(__dirname + '/views/'));
@@ -16,8 +17,8 @@ app.use(bodyParser.urlencoded({
 }));
 
 
-app.use('/home', require('./routes/home.js'));
 
+app.use('/home', require('./routes/home.js'));
 
 
 app.listen(port, () => {
