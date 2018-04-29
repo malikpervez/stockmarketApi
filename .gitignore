@@ -1,1 +1,6 @@
 node_modules/
+.sass-cache
+public/styles/css/styles.css
+public/styles/css/styles.css.map
+views/**/*.css
+views/**/partials/*.css
