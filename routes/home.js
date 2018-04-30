@@ -1,19 +1,31 @@
 var router = require('express').Router();
+var request = require('request-promise');
+var alphaVantageApiKey = "PKPB4LE3EE3YKT4V";
 
-const stockApi = 'PKPB4LE3EE3YKT4V';
-var intraDay = 'TIME_SERIES_INTRADAY'
 
 
 router.get("/", function(req, res) {
-  var request = require('request');
-    request('https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&symbol=MSFT&interval=1min&apikey='+stockApi, function (error, response, body) {
-    var json = JSON.parse(body)
-      if (error) {
-        console.log(error)
-      } else {
-        console.log("data recieved")
+  // This specifies the company for which
+      // to retrieve the stock history
+      var symbol = req.query.symbol;
+      if (!symbol) {
+          throw new Error("Symbol not specified.");
       }
-    });
-    res.render("home/home",);
+https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=MSFT&apikey=PKPB4LE3EE3YKT4V&datatype=csv
+
+      var baseUrl = 'https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=';
+      var url = baseUrl  + symbol + '&apikey=' + alphaVantageApiKey + '&datatype=csv';
+      request(url) // Send request to Alpha Vantage.
+          .then(function (result) {
+              // res.set('Content-Type', 'text/csv');
+              // res.send(result).end(); // Send CSV data to the browser.
+              res.render('home/home', ({
+                data:result
+              }))
+          })
+          .catch(function (e) {
+              console.error(e)
+              res.sendStatus(500); // Error result.
+          });
 });
 module.exports = router;

@@ -12,12 +12,16 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "alpha-vantage-cli": "^1.0.8",
     "body-parser": "^1.18.2",
+    "data-forge": "^0.6.0",
     "ejs": "^2.5.9",
     "express": "^4.16.3",
     "node-sass-chokidar": "^1.2.2",
     "nodemon": "^1.17.3",
+    "plotly.js": "^1.36.1",
     "request": "^2.85.0",
+    "request-promise": "^4.2.2",
     "stocks.js": "0.0.17"
   }
 }
