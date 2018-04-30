@@ -4,10 +4,11 @@
   "description": "a project displaying stock market information overtime",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon index.js",
+    "start": "nodemon index.js & npm run sass:watch",
     "sass": "node-sass-chokidar views/ -o views/ --recursive --output-style compressed",
     "sass:watch": "node-sass-chokidar views/ -o views/ --recursive --output-style compressed --watch",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "server": "nodemon index.js"
   },
   "author": "",
   "license": "ISC",

@@ -16,7 +16,7 @@ app.use(bodyParser.urlencoded({
     extended: true
 }));
 
-
+//ignore commented out lines due to api failure.
 
 app.get('/stocks', function (req, res) {
 
@@ -40,6 +40,26 @@ app.get('/stocks', function (req, res) {
     //     });
         res.render('home/home');
 });
+
+app.get('/apple', function(req,res){
+  res.render('apple/apple');
+})
+
+app.get('/amazon', function(req,res){
+  res.render('amazon/amazon')
+})
+
+app.get('/microsoft', function(req,res){
+  res.render('microsoft');
+})
+
+app.get('/tesla', function(req,res){
+  res.render('tesla/tesla')
+})
+
+app.get('facebook', function(req,res){
+  res.render('facebook/facebook')
+})
 
 app.listen(port, () => {
     console.log('Server listening on port ' + port + '…');
