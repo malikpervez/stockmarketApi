@@ -57,7 +57,7 @@ app.get('/tesla', function(req,res){
   res.render('tesla/tesla')
 })
 
-app.get('facebook', function(req,res){
+app.get('/facebook', function(req,res){
   res.render('facebook/facebook')
 })
 
