@@ -18,7 +18,7 @@ app.use(bodyParser.urlencoded({
 
 //ignore commented out lines due to api failure.
 
-app.get('/stocks', function (req, res) {
+app.get('/', function (req, res) {
 
     // This specifies the company for which
     // to retrieve the stock history
@@ -50,7 +50,7 @@ app.get('/amazon', function(req,res){
 })
 
 app.get('/microsoft', function(req,res){
-  res.render('microsoft');
+  res.render('microsoft/microsoft');
 })
 
 app.get('/tesla', function(req,res){

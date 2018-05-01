@@ -40,12 +40,12 @@ $(window).ready(function() {
       var data = [trace];
 
       var layout = {
+        title:`<b><a href=/`+key+`>`+key+`</a></b>`, 
         label: key,
         autosize: true,
         dragmode: 'zoom',
         showlegend: false,
         xaxis: {
-          title: '<b><a href=/'+key+'>'+key+'</a></b>',
           rangeslider: {
              visible: true
          },

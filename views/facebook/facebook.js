@@ -25,6 +25,7 @@ var trace = {
 var data = [trace];
 
 var layout = {
+  title: 'Facebook',
   dragmode: 'zoom',
   showlegend: false,
   xaxis: {
@@ -87,7 +88,7 @@ var trace2 = {
 var data = [trace1,trace2];
 
 var layout = {
-  title: 'OVertime',
+  title: 'Trend Overtime',
 };
 
 Plotly.newPlot('facebook__line', data, layout);
@@ -122,6 +123,7 @@ var trace = {
 var data = [trace];
 
 var layout = {
+  title: 'Open-High-Low-Close',
   dragmode: 'zoom',
   showlegend: false,
   xaxis: {
