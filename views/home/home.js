@@ -1,6 +1,6 @@
+
 $(window).ready(function() {
-
-
+    //in the layout variable I can add a title attribute and pass the key with a link into it. The issue with this is that plotly will recognize the tag but not point to the route
     var links = {
       'Microsoft':'https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=MSFT&apikey=PKPB4LE3EE3YKT4V&datatype=csv',
       'Apple': 'https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=AAPL&apikey=PKPB4LE3EE3YKT4V&datatype=csv',
@@ -21,6 +21,7 @@ $(window).ready(function() {
         });
       }
       $('.loader').hide();
+      $('.links').show();
       var trace = {
         x: unpack(rows, 'timestamp'),
         close: unpack(rows, 'open'),
@@ -40,7 +41,6 @@ $(window).ready(function() {
       var data = [trace];
 
       var layout = {
-        title:`<b><a href=/`+key+`>`+key+`</a></b>`, 
         label: key,
         autosize: true,
         dragmode: 'zoom',

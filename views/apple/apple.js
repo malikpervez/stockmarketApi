@@ -103,7 +103,7 @@ function unpack(rows, key) {
     return row[key];
   });
 }
-
+$('.loader').hide();
 var trace = {
   x: unpack(rows, 'timestamp'),
   close: unpack(rows, 'close'),
@@ -123,7 +123,7 @@ var trace = {
 var data = [trace];
 
 var layout = {
-  title: 'Open-High-Low-Close',
+  title: 'Open-High-Low-Close(OHLC)',
   dragmode: 'zoom',
   showlegend: false,
   xaxis: {

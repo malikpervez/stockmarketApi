@@ -7,3 +7,16 @@
   height: 400px;
   border: 1px solid black;
 }
+
+.links{
+  font-size: 16pt;
+  font-family: sans-serif;
+  color: black;
+  display:none;
+}
+//this relates to the whole routing issue with plotly
+#top-link{
+  z-index: 999;
+  position: relative;
+  top:58px;
+}

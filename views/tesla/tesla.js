@@ -65,8 +65,7 @@ Plotly.d3.csv("https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symb
   function unpack(rows, key) {
   return rows.map(function(row) { return row[key]; });
 }
-
-
+$('.loader').hide();
 var trace1 = {
   type: "scatter",
   mode: "lines",
@@ -123,7 +122,7 @@ var trace = {
 var data = [trace];
 
 var layout = {
-  title: 'Open-High-Low-Close',
+  title: 'Open-High-Low-Close(OHLC)',
   dragmode: 'zoom',
   showlegend: false,
   xaxis: {
